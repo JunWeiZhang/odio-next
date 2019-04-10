@@ -1,0 +1,11 @@
+.countries-container .country-item {
+  width: 25%;
+
+  & .flag {
+    display: block;
+    width: 100%;
+    height: 8%;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}

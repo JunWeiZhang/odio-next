@@ -1,0 +1,16 @@
+.menu-item {
+  width: 100%;
+  cursor: pointer;
+  & .sub-menu {
+    width: 100%;
+    overflow: hidden;
+    transition: transform 0.1s ease-out;
+    height: auto;
+    transform: scaleY(0);
+    transform-origin: top;
+
+    &.open {
+      transform: scaleY(1);
+    }
+  }
+}

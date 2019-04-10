@@ -1,0 +1,15 @@
+.layout-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+
+  & .page-container {
+    position: absolute;
+    left: 200px;
+    right: 200px;
+    top: 0;
+    bottom: 0;
+  }
+}
