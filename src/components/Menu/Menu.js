@@ -1,6 +1,7 @@
 import React from "react";
 
 /* Components */
+import MenuGroup from "./MenuGroup/MenuGroup";
 import MeniItem from "./MenuItem/MenuItem";
 
 const Menu = () => {
@@ -9,13 +10,12 @@ const Menu = () => {
       <MeniItem label="Home" path="/" />
       <MeniItem label="Favorites" path="/favorites" />
       <MeniItem label="Countries" path="/countries" />
-      <MeniItem label="Radio Stations">
-        <>
-          <MeniItem label="test" />
-          <MeniItem label="test" />
-          <MeniItem label="test" />
-        </>
-      </MeniItem>
+
+      <MenuGroup label="Radio Stations">
+        <MeniItem label="test" />
+        <MeniItem label="test" />
+        <MeniItem label="test" />
+      </MenuGroup>
     </div>
   );
 };
