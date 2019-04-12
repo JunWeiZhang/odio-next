@@ -44,7 +44,7 @@ class Countries extends Component {
     return (
       <div className="countries-container">
         <Header title="Countries" />
-        {this.getContent()}
+        <div className="container countries">{this.getContent()}</div>
       </div>
     );
   }

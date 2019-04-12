@@ -9,7 +9,7 @@ const CountryItem = props => {
       className={`country-item`}
       onClick={() => props.onClick(props.name.toLowerCase())}
     >
-      <span className={`flag flag-icon-${props.iso}`} />
+      <span className={`flag flag-icon-${props.iso.toLowerCase()}`} />
       {props.name}
     </div>
   );
@@ -17,8 +17,12 @@ const CountryItem = props => {
 
 CountryItem.propTypes = {
   name: PropTypes.string.isRequired,
-  iso: PropTypes.string.isRequired,
+  iso: PropTypes.string,
   onClick: PropTypes.func.isRequired
+};
+
+CountryItem.defaultProps = {
+  iso: ""
 };
 
 export default CountryItem;
