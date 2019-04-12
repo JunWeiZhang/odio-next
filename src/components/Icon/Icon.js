@@ -17,11 +17,16 @@ const icons = {
 };
 
 function Icon(props) {
-  return <FontAwesomeIcon icon={icons[props.icon]} />;
+  return <FontAwesomeIcon icon={icons[props.icon]} onClick={props.onClick} />;
 }
 
 Icon.propTypes = {
-  icon: PropTypes.string.isRequired
+  icon: PropTypes.string.isRequired,
+  onClick: PropTypes.func
+};
+
+Icon.defaultProps = {
+  onClick: () => {}
 };
 
 export default Icon;

@@ -6,8 +6,6 @@ const { spawn } = require("child_process");
 // Any directories you will be adding code/files into, need to be added to this array so webpack will pick them up
 const defaultInclude = path.join(__dirname, "../../src");
 
-console.log("devvvv", defaultInclude);
-
 module.exports = {
   module: {
     rules: [
@@ -26,11 +24,8 @@ module.exports = {
         include: defaultInclude
       },
       {
-        test: /\.(eot|ttf|woff|woff2)$/,
-        use: [
-          { loader: "file-loader?name=font/[name]__[hash:base64:5].[ext]" }
-        ],
-        include: defaultInclude
+        test: /\.(jpg|jpeg|png|woff|woff2|eot|ttf|svg)$/,
+        loader: "url-loader?limit=100000"
       },
       {
         test: /\.(svg)$/,

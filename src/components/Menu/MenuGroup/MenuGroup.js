@@ -10,8 +10,7 @@ const _CLASS = {
 
 class MenuGroup extends Component {
   static propTypes = {
-    label: PropTypes.string.isRequired,
-    path: PropTypes.string.isRequired
+    label: PropTypes.string.isRequired
   };
 
   constructor(props) {

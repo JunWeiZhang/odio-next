@@ -9,7 +9,7 @@ import "./Stations.scss";
 function Stations(props) {
   const renderStations = () => {
     return props.stations.map((station, i) => (
-      <StationsItem key={`${station.name}-${i}`} {...station} />
+      <StationsItem key={`${station.name}-${i}`} station={station} />
     ));
   };
 

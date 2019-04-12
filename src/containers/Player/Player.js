@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 /* Components */
+import AudioManager from "./AudioManager/AudioManager";
 import Controls from "./Controls/Controls";
 
 class Player extends Component {
@@ -9,6 +10,7 @@ class Player extends Component {
   render() {
     return (
       <div>
+        <AudioManager />
         <Controls />
       </div>
     );

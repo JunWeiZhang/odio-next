@@ -17,7 +17,7 @@ function MenuItem(props) {
 
 MenuItem.propTypes = {
   label: PropTypes.string.isRequired,
-  path: PropTypes.string.isRequired
+  path: PropTypes.string
 };
 
 export default MenuItem;

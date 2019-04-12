@@ -4,7 +4,11 @@ import PropTypes from "prop-types";
 import "./Header.scss";
 
 const Header = props => {
-  return <div className="header-generic">{props.title}</div>;
+  return (
+    <div className="header-generic container">
+      <div className="title">{props.title}</div>
+    </div>
+  );
 };
 
 Header.propTypes = {
