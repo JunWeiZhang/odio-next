@@ -45,6 +45,8 @@ export class AudioManager extends Component {
 
   async start(station) {
     try {
+      this.pause();
+
       const stationInfo = await this.props.dispatch(
         StationsAPI.getStreamUrl({ id: station.id })
       );
@@ -122,7 +124,7 @@ export class AudioManager extends Component {
   error() {}
 
   render() {
-    return <div />;
+    return null;
   }
 }
 

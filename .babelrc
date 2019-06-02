@@ -20,7 +20,8 @@
           "@redux": "./src/redux",
           "@style": "./src/style",
           "@constants": "./src/constants",
-          "@api": "./src/api"
+          "@api": "./src/api",
+          "@assets": "./src/assets"
         }
       }
     ],

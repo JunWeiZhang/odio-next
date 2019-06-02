@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 /* Actions */
 import * as PlayerActions from "@redux/reducers/player/actions";
 
-const StationItem = props => {
+const Station = props => {
   const handleClick = () => {
     props.dispatch(PlayerActions.setStation(props.station));
   };
@@ -17,11 +17,11 @@ const StationItem = props => {
   );
 };
 
-StationItem.propTypes = {
+Station.propTypes = {
   name: PropTypes.string.isRequired,
   station: PropTypes.shape({
     name: PropTypes.string
   })
 };
 
-export default connect()(StationItem);
+export default connect()(Station);

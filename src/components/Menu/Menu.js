@@ -4,9 +4,11 @@ import React from "react";
 import MenuGroup from "./MenuGroup/MenuGroup";
 import MeniItem from "./MenuItem/MenuItem";
 
+import "./Menu.scss";
+
 const Menu = () => {
   return (
-    <div className="menu">
+    <div className="menu-container">
       <MeniItem label="Home" path="/" />
       <MeniItem label="Favorites" path="/favorites" />
       <MeniItem label="Countries" path="/countries" />

@@ -1,9 +1,10 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
 /* Component */
 import Header from "@components/Header/Header";
-import Stations from "@containers/Stations/Stations";
+import StationsView from "@containers/StationsView/StationsView";
 
 /* Actions */
 import * as CountryActions from "@redux/reducers/country/actions";
@@ -11,7 +12,6 @@ import * as CountryActions from "@redux/reducers/country/actions";
 /* Constants */
 import Routes from "@constants/routes";
 
-import { connect } from "react-redux";
 class Country extends Component {
   static propTypes = {
     stations: PropTypes.array.isRequired,
@@ -25,32 +25,37 @@ class Country extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      country: this.props.match.params.country
-    };
+    this.countryName = this.props.match.params.country;
   }
 
-  componentDidMount() {
-    if (!this.state.country) return window.goToRoute(Routes.HOME);
-    this.props.dispatch(CountryActions.getStations(this.state.country));
-  }
+  // componentDidMount() {
+  //   if (!this.countryName) return window.goToRoute(Routes.HOME);
+  //   this.props.dispatch(CountryActions.getStations(this.countryName));
+  // }
 
-  componentWillUnmount() {
-    this.props.dispatch(CountryActions.setStations([]));
-  }
+  // componentWillUnmount() {
+  //   this.props.dispatch(CountryActions.setStations([]));
+  // }
 
   render() {
+    console.log("Country this.props.stations: ", this.props.stations);
     return (
       <div className="country-container">
-        <Header title={this.state.country} />
-        <Stations stations={this.props.stations} />
+        <Header title={this.countryName} />
+        <StationsView
+          stations={this.props.stations}
+          title={this.countryName}
+          subTitle={`Listen to radio stations in ${this.countryName}`}
+          fetchBy={this.countryName}
+          {...CountryActions}
+        />
       </div>
     );
   }
 }
 
 const mapStateToProps = state => ({
-  stations: state.country.array
+  stations: state.country.stations
 });
 
 export default connect(mapStateToProps)(Country);

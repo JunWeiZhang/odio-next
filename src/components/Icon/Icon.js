@@ -17,16 +17,24 @@ const icons = {
 };
 
 function Icon(props) {
-  return <FontAwesomeIcon icon={icons[props.icon]} onClick={props.onClick} />;
+  return (
+    <FontAwesomeIcon
+      icon={icons[props.icon]}
+      onClick={props.onClick}
+      size={props.size}
+    />
+  );
 }
 
 Icon.propTypes = {
   icon: PropTypes.string.isRequired,
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
+  size: PropTypes.string
 };
 
 Icon.defaultProps = {
-  onClick: () => {}
+  onClick: () => {},
+  size: "2x"
 };
 
 export default Icon;

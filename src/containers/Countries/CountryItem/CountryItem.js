@@ -9,7 +9,7 @@ const CountryItem = props => {
       className={`country-item`}
       onClick={() => props.onClick(props.name.toLowerCase())}
     >
-      <span className={`flag flag-icon-${props.iso.toLowerCase()}`} />
+      <span className={`flag flag-icon-${props.iso}`} />
       {props.name}
     </div>
   );

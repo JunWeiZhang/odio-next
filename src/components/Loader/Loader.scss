@@ -1,0 +1,9 @@
+.loader-container {
+  float: left;
+  width: 100%;
+  text-align: center;
+
+  & .loader {
+    margin-top: 20px;
+  }
+}

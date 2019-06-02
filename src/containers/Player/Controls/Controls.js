@@ -11,22 +11,31 @@ import Icon from "@components/Icon/Icon";
 /* constants */
 import PlayerState from "@constants/playerState";
 
+import "./Controls.scss";
+
 function Controls(props) {
   const getPlayIcon = () => {
     switch (props.state) {
       case PlayerState.PLAYING:
-        return <Icon icon="pause-circle" onClick={props.pause} />;
+        return <Icon icon="pause" onClick={props.pause} size="3x" />;
 
       case PlayerState.PAUSE:
       case PlayerState.NULL:
-        return <Icon icon="play-circle" onClick={props.play} />;
+        return <Icon icon="play" onClick={props.play} size="3x" />;
 
       default:
         break;
     }
   };
 
-  return <div>{getPlayIcon()}</div>;
+  return (
+    <div className="player-controls">
+      <div className="control play">{getPlayIcon()}</div>
+      <span className="bubble-ripple">
+        <span className="bubble-ripple-inner" />
+      </span>
+    </div>
+  );
 }
 
 Controls.propTypes = {

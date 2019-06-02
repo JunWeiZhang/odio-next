@@ -1,16 +1,9 @@
 import React from "react";
 
-/* Components */
-import Player from "@containers/Player/Player";
-
 import "./SideBarRight.scss";
 
 const SideBarRight = () => {
-  return (
-    <div className="sidebar-right-container">
-      <Player />
-    </div>
-  );
+  return <div className="sidebar-right-container">Right</div>;
 };
 
 export default SideBarRight;

@@ -5,7 +5,15 @@ import PlayerState from "@constants/playerState";
 
 const initialState = {
   state: PlayerState.NULL,
-  station: {}
+  station: {},
+  colors: {
+    darkMuted: "",
+    darkVibrant: "",
+    lightMuted: "",
+    lightVibrant: "",
+    muted: "",
+    vibrant: ""
+  }
 };
 
 export default (state = initialState, { type, payload }) => {
@@ -15,6 +23,9 @@ export default (state = initialState, { type, payload }) => {
 
     case constants.PLAYER_PLAY_STATION:
       return Object.assign({}, state, { station: payload });
+
+    case constants.SET_PLAYER_COLORS:
+      return Object.assign({}, state, { colors: payload });
 
     default: {
       return state;

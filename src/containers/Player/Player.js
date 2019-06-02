@@ -1,20 +1,24 @@
-import React, { Component } from "react";
+import React from "react";
+import { connect } from "react-redux";
 
 /* Components */
-import AudioManager from "./AudioManager/AudioManager";
+// import Background from "./Background/Background";
+import Station from "./Station/Station";
 import Controls from "./Controls/Controls";
 
-class Player extends Component {
-  static propTypes = {};
+import "./Player.scss";
 
-  render() {
-    return (
-      <div>
-        <AudioManager />
-        <Controls />
-      </div>
-    );
-  }
-}
+const SideBarRight = props => {
+  return (
+    <div className="player-container">
+      <Station />
+      <Controls />
+    </div>
+  );
+};
 
-export default Player;
+const mapStateToProps = state => ({
+  colors: state.player.colors
+});
+
+export default connect(mapStateToProps)(SideBarRight);

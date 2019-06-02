@@ -8,8 +8,10 @@
   & .page-container {
     position: absolute;
     left: 200px;
-    right: 200px;
+    right: 270px;
     top: 0;
     bottom: 0;
+    overflow-y: auto;
+    height: calc(100% - 70px);
   }
 }

@@ -6,7 +6,7 @@ import { HashRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 
 import store from "@redux/store";
-import routes from "@helpers/routes";
+import routes from "@helpers/client/routes";
 
 window.goToRoute = HashRouter.push;
 
